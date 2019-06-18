@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">goToFit</string>
+
+    <string name="fragment_calendar">Calendar</string>
+    <string name="fragment_chart">Chart</string>
+    <string name="fragment_measurement">Measurement</string>
+</resources>
