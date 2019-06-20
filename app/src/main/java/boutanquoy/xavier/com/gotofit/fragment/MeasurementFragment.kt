@@ -3,12 +3,18 @@ package boutanquoy.xavier.com.gotofit.fragment
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 
 import boutanquoy.xavier.com.gotofit.R
+import boutanquoy.xavier.com.gotofit.adapter.ItemMeasurementAdapter
+import kotlinx.android.synthetic.main.fragment_measurement.*
+import java.util.ArrayList
 
 /**
  * A simple [Fragment] subclass.
@@ -21,15 +27,27 @@ import boutanquoy.xavier.com.gotofit.R
  */
 class MeasurementFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_measurement, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
+
+        measurementView.apply {
+            setHasFixedSize(true)
+            isNestedScrollingEnabled = false
+            layoutManager = LinearLayoutManager(context)
+            adapter = ItemMeasurementAdapter(arrayListOf("test1", "test2"))
+        }
     }
 }
