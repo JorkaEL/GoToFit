@@ -1,6 +1,7 @@
 package boutanquoy.xavier.com.gotofit.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -10,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import boutanquoy.xavier.com.gotofit.AddMeasurementActivity
 
 import boutanquoy.xavier.com.gotofit.R
 import boutanquoy.xavier.com.gotofit.adapter.ItemMeasurementAdapter
@@ -39,8 +41,10 @@ class MeasurementFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            val intent = Intent(context, AddMeasurementActivity::class.java)
+            startActivity(intent)
+            //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //.setAction("Action", null).show()
         }
 
         measurementView.apply {
