@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
-    tools:context=".AddMeasurementActivity">
+    tools:context=".measurement.AddMeasurement.view.AddMeasurementActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"

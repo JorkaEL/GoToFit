@@ -1,7 +1,8 @@
-package boutanquoy.xavier.com.gotofit
+package boutanquoy.xavier.com.gotofit.measurement.AddMeasurement.view
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import boutanquoy.xavier.com.gotofit.R
 import kotlinx.android.synthetic.main.activity_add_measurement.*
 
 class AddMeasurementActivity : AppCompatActivity() {
