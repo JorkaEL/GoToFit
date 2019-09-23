@@ -1,4 +1,4 @@
-package boutanquoy.xavier.com.gotofit.fragment
+package boutanquoy.xavier.com.gotofit.calendar.view
 
 import android.content.Context
 import android.net.Uri
@@ -9,22 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 
 import boutanquoy.xavier.com.gotofit.R
-import com.github.mikephil.charting.data.PieData
-import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
-import com.github.mikephil.charting.utils.ColorTemplate
-import kotlinx.android.synthetic.main.fragment_graph.*
 
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [GraphFragment.OnFragmentInteractionListener] interface
+ * [CalendarFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [GraphFragment.newInstance] factory method to
+ * Use the [CalendarFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class GraphFragment : Fragment() {
+class CalendarFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,13 +30,14 @@ class GraphFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_graph, container, false)
+        return inflater.inflate(R.layout.fragment_calendar, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
     }
 
+    override fun onDetach() {
+        super.onDetach()
+    }
 }

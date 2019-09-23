@@ -1,4 +1,4 @@
-package boutanquoy.xavier.com.gotofit.fragment
+package boutanquoy.xavier.com.gotofit.measurement.view
 
 import android.content.Context
 import android.content.Intent
@@ -14,9 +14,7 @@ import android.widget.ArrayAdapter
 import boutanquoy.xavier.com.gotofit.AddMeasurementActivity
 
 import boutanquoy.xavier.com.gotofit.R
-import boutanquoy.xavier.com.gotofit.adapter.ItemMeasurementAdapter
 import kotlinx.android.synthetic.main.fragment_measurement.*
-import java.util.ArrayList
 
 /**
  * A simple [Fragment] subclass.
@@ -51,7 +49,12 @@ class MeasurementFragment : Fragment() {
             setHasFixedSize(true)
             isNestedScrollingEnabled = false
             layoutManager = LinearLayoutManager(context)
-            adapter = ItemMeasurementAdapter(arrayListOf("test1", "test2"))
+            adapter = MeasurementAdapter(
+                arrayListOf(
+                    "test1",
+                    "test2"
+                )
+            )
         }
     }
 }

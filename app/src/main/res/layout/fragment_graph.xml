@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:showIn="@layout/activity_main"
-        tools:context=".fragment.GraphFragment">
+        tools:context=".graph.view.GraphFragment">
 
 
 </android.support.constraint.ConstraintLayout>

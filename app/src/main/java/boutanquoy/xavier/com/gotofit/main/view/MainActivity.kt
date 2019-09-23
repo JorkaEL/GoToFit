@@ -1,9 +1,9 @@
-package boutanquoy.xavier.com.gotofit
+package boutanquoy.xavier.com.gotofit.main.view
 
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
-import boutanquoy.xavier.com.gotofit.adapter.FitPagerAdapter
+import boutanquoy.xavier.com.gotofit.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +21,10 @@ class MainActivity : AppCompatActivity() {
         tab_layout.addTab(tab_layout.newTab().setText(R.string.fragment_chart))
         tab_layout.addTab(tab_layout.newTab().setText(R.string.fragment_calendar))
 
-        val adapter = FitPagerAdapter(supportFragmentManager, tab_layout.tabCount)
+        val adapter = FitPagerAdapter(
+            supportFragmentManager,
+            tab_layout.tabCount
+        )
         pager.adapter = adapter
 
         pager.addOnPageChangeListener(
