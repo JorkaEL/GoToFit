@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import boutanquoy.xavier.com.gotofit.measurement.AddMeasurement.view.AddMeasurementActivity
 
 import boutanquoy.xavier.com.gotofit.R
+import boutanquoy.xavier.com.gotofit.measurement.presenter.MeasurementPresenterImpl
 import kotlinx.android.synthetic.main.fragment_measurement.*
 
 /**
@@ -22,35 +23,26 @@ import kotlinx.android.synthetic.main.fragment_measurement.*
  *
  */
 class MeasurementFragment : Fragment() {
+    private lateinit var presenter: MeasurementPresenterImpl
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        presenter = MeasurementPresenterImpl(this)
         return inflater.inflate(R.layout.fragment_measurement, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        fab.setOnClickListener { view ->
+        fab.setOnClickListener {
             val intent = Intent(context, AddMeasurementActivity::class.java)
             startActivity(intent)
             //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 //.setAction("Action", null).show()
         }
 
-        measurementView.apply {
-            setHasFixedSize(true)
-            isNestedScrollingEnabled = false
-            layoutManager = LinearLayoutManager(context)
-            adapter = MeasurementAdapter(
-                arrayListOf(
-                    "test1",
-                    "test2"
-                )
-            )
-        }
+        presenter.initPresenter()
     }
 }

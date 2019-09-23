@@ -7,13 +7,13 @@ import boutanquoy.xavier.com.gotofit.calendar.view.CalendarFragment
 import boutanquoy.xavier.com.gotofit.graph.view.GraphFragment
 import boutanquoy.xavier.com.gotofit.measurement.view.MeasurementFragment
 
-class FitPagerAdapter(fm : FragmentManager, private var tabCount: Int) : FragmentPagerAdapter(fm) {
+class FitPagerAdapter(fm: FragmentManager, private var tabCount: Int) : FragmentPagerAdapter(fm) {
     override fun getItem(position: Int): Fragment? {
-         when (position) {
-            0 -> return MeasurementFragment()
-            1 ->  return GraphFragment()
-            2 -> return CalendarFragment()
-             else -> return null
+        return when (position) {
+            0 -> MeasurementFragment()
+            1 -> GraphFragment()
+            2 -> CalendarFragment()
+            else -> null
         }
     }
 

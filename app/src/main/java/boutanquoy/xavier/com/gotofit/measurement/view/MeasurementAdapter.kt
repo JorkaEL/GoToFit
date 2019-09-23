@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import boutanquoy.xavier.com.gotofit.R
 
-class MeasurementAdapter(private val dataMeasurement: ArrayList<String>): RecyclerView.Adapter<MeasurementAdapter.ItemViewHolder>() {
+class MeasurementAdapter(private val dataMeasurement: List<String>): RecyclerView.Adapter<MeasurementAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
 
