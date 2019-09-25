@@ -1,19 +1,12 @@
 package boutanquoy.xavier.com.gotofit.graph.view
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import boutanquoy.xavier.com.gotofit.R
-import com.github.mikephil.charting.data.PieData
-import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
-import com.github.mikephil.charting.utils.ColorTemplate
-import kotlinx.android.synthetic.main.fragment_graph.*
+import boutanquoy.xavier.com.gotofit.graph.presenter.GraphPresenterImpl
 
 /**
  * A simple [Fragment] subclass.
@@ -26,6 +19,8 @@ import kotlinx.android.synthetic.main.fragment_graph.*
  */
 class GraphFragment : Fragment() {
 
+    private lateinit var presenter: GraphPresenterImpl
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -34,14 +29,14 @@ class GraphFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        presenter = GraphPresenterImpl(this)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_graph, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
+        presenter.initPresenter()
     }
 
 }
